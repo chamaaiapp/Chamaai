@@ -1,0 +1,14 @@
+// Estrutura base do app Next.js com Firebase integrada
+
+// 1. Arquivo: package.json { "name": "chama-ai-app", "version": "1.0.0", "scripts": { "dev": "next dev", "build": "next build", "start": "next start" }, "dependencies": { "firebase": "^10.0.0", "next": "13.4.12", "react": "18.2.0", "react-dom": "18.2.0" } }
+
+// 2. Arquivo: firebase.js (em /lib/firebase.js) import { initializeApp } from "firebase/app"; import { getFirestore } from "firebase/firestore"; import { getAuth } from "firebase/auth";
+
+const firebaseConfig = { apiKey: "AIzaSyCgucJTX8FzymoMgowylCWhraTVKB_Tc54", authDomain: "chamaaiapp-cd660.firebaseapp.com", projectId: "chamaaiapp-cd660", storageBucket: "chamaaiapp-cd660.appspot.com", messagingSenderId: "195839257697", appId: "1:195839257697:web:f2546bf417b12b6e4a8e20", measurementId: "G-MS9PK8HD4X" };
+
+const app = initializeApp(firebaseConfig); const db = getFirestore(app); const auth = getAuth(app);
+
+export { db, auth };
+
+// (continua nos próximos arquivos...)
+
